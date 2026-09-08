@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#09090c" />
+  <meta name="description" content="Memory de la Crypte — jeu de mémoire Halloween responsive." />
+  <title>Memory de la Crypte</title>
+  <link rel="preload" href="./assets/crypte.webp" as="image" type="image/webp" fetchpriority="high" />
+  <link rel="preload" href="./assets/cercueil-ferme.webp" as="image" type="image/webp" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <h1>Memory de la Crypte</h1>
+      <div class="controls">
+        <span id="moves" aria-live="polite">Coups : 0</span>
+        <button id="soundBtn" class="icon-btn" type="button" aria-pressed="false" aria-label="Couper le son">🔊</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="startScreen" class="start-screen" aria-labelledby="startTitle">
+        <div class="start-card">
+          <h2 id="startTitle">Memory de la Crypte</h2>
+          <button id="startBtn" class="primary-btn" type="button">Entrer dans la crypte</button>
+        </div>
+      </section>
+
+      <section id="game" class="game hidden" aria-label="Plateau de jeu">
+        <div id="board" class="board"></div>
+      </section>
+    </main>
+
+    <section id="victory" class="victory hidden" role="dialog" aria-modal="true" aria-labelledby="victoryTitle">
+      <div class="victory-card">
+        <h2 id="victoryTitle">Félicitation, tu n'as vraiment peur de rien!</h2>
+        <button id="restartBtn" class="primary-btn" type="button">Rejouer</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="./game.js" defer></script>
+</body>
+</html>
